@@ -14,13 +14,16 @@ const textLinks: { label: string; href: string }[] = [
 const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
 ];
 
-
+let currentUrl = Astro.url.pathname
+if (!currentUrl.endsWith("/")){
+	currentUrl+="/"
+}
 ---
 
 
 <nav>
 	<div class="menu-header">
-		<a href="/portfolio_team" class="site-title">
+		<a href="/portfolio_team/" class="site-title">
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
 			Fullstacks
 		</a>
@@ -39,12 +42,12 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 				textLinks.map(({ label, href }) => (
 					<li>
 						<a
-							aria-current={Astro.url.pathname === href}
+							aria-current={currentUrl === href}
 							class:list={[
 								'link',
 								{
 									active:
-										Astro.url.pathname === href,
+										currentUrl === href
 								},
 							]}
 							href={href}
@@ -76,12 +79,12 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 				textLinks.map(({ label, href }) => (
 					<li>
 						<a
-							aria-current={Astro.url.pathname === href}
+							aria-current={currentUrl === href}
 							class:list={[
 								'link',
 								{
 									active:
-										Astro.url.pathname === href,
+										currentUrl === href
 								},
 							]}
 							href={href}
