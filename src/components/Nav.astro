@@ -5,7 +5,7 @@ import type { iconPaths } from './IconPaths';
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/portfolio_team' },
+	{ label: 'Home', href: '/portfolio_team/' },
 	{ label: 'Work', href: '/portfolio_team/work/' },
 	{ label: 'About', href: '/portfolio_team/about/' },
 ];
@@ -13,7 +13,9 @@ const textLinks: { label: string; href: string }[] = [
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
 ];
+
 ---
+
 
 <nav>
 	<div class="menu-header">
@@ -41,8 +43,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 								'link',
 								{
 									active:
-										Astro.url.pathname === href ||
-										(href !== '/portfolio_team' && Astro.url.pathname.startsWith(href)),
+										Astro.url.pathname === href,
 								},
 							]}
 							href={href}
@@ -79,8 +80,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 								'link',
 								{
 									active:
-										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										Astro.url.pathname === href,
 								},
 							]}
 							href={href}
