@@ -38,14 +38,15 @@ const { Content } = await entry.render();
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
-							<p class="description">{entry.data.description}</p>
 						</div>
+						<p class="description">{entry.data.description}</p>
+
 					</Hero>
 				</div>
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+					{entry.data.img && <img class="image-with-scale" src={entry.data.img} alt={entry.data.img_alt || ''} />}
 					<div class="content">
 						<Content />
 					</div>
@@ -78,6 +79,11 @@ const { Content } = await entry.render();
 	.tags {
 		display: flex;
 		gap: 0.5rem;
+
+		display: flex;
+		text-align: center;
+		flex-wrap: wrap;
+		align-items: center;
 	}
 
 	.description {

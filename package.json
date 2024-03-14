@@ -1,5 +1,5 @@
 {
-  "homepage":"https://andresrestrepo.github.io/portfolio_team",
+  "homepage": "https://andresrestrepo.github.io/portfolio_team",
   "name": "portfolio-beta",
   "type": "module",
   "version": "0.0.1",
@@ -10,10 +10,11 @@
     "preview": "astro preview",
     "astro": "astro",
     "predeploy": "npm run build",
-    "deploy":"gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.6",
+    "@astrojs/mdx": "^2.2.0",
     "astro": "^4.4.14",
     "typescript": "^5.4.2"
   },
