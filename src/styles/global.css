@@ -254,7 +254,7 @@ h5 {
 	}
 }
 
-.image-with-scale:hover{
+.image-with-scale:active{
 	-webkit-transform: scale(1.5);
 	-moz-transform: scale(1.5);
 	-o-transform: scale(1.5);
